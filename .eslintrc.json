@@ -1,3 +1,51 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended", "next/core-web-vitals"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier", "import-helpers"],
+  "rules": {
+    "no-use-before-define": "off",
+    "space-before-function-paren": "off",
+    "indent": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-use-before-define": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "multiline-ternary": "off",
+    "import-helpers/order-imports": [
+      "warn",
+      {
+        "newlinesBetween": "always",
+        "groups": [
+          ["/^react/", "/^next/"],
+          ["module", "/^styled-components/", "/(@)/"],
+          ["/(contexts)/", "/(hooks)/"],
+          "/(components)/",
+          "/(assets)/",
+          "/(public)/",
+          "/(data)/",
+          "/(styles)/",
+          "/(lib)/"
+        ],
+        "alphabetize": { "order": "desc", "ignoreCase": true }
+      }
+    ],
+    "react/no-unescaped-entities": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

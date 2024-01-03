@@ -3,11 +3,27 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 4rem;
   min-height: 100vh;
 }
 
-.description {
+.header {
+  height: 80px;
+  background: #4B0081;
+  display: flex;
+  align-items: center;
+}
+
+.banner {
+display: flex;
+align-items: center;
+justify-content: center;
+width: fit-content;
+max-width: fit-content;
+
+}
+
+.content {
   display: inherit;
   justify-content: inherit;
   align-items: inherit;
@@ -18,14 +34,14 @@
   font-family: var(--font-mono);
 }
 
-.description a {
+.content a {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
 
-.description p {
+.content p {
   position: relative;
   margin: 0;
   padding: 1rem;
